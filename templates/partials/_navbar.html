@@ -1,8 +1,9 @@
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="assets/img/logo.png" class="logo" alt="">
+            <img src="{% static 'img/logo.png' %}" class="logo" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
