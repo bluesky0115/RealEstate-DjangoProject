@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "C:\\Users\\91910\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+    "python.pythonPath": "C:\\Users\\91910\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "editor.formatOnSave": false,
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+    ],
 }
