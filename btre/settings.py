@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
