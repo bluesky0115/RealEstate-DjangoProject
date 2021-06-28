@@ -39,6 +39,7 @@
 
         {% if listings %} 
           {% for listing in listings %}
+
             <div class="col-md-6 col-lg-4 mb-4">
               <div class="card listing-preview">
                 <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
@@ -81,10 +82,12 @@
               </div>
             </div>
             {%endfor%}
+
         {% else %} 
           <div class="col-md-12">
             <p> No Listings Available</p>
           </div>
+
         {%endif%}
 
       </div>
