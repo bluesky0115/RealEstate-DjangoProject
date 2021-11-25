@@ -16,7 +16,7 @@
 git clone https://github.com/nandinichhajed/RealEstate-DjangoProject.git
 ```
 
-**Get project forlder**
+**Get project folder**
 
 ```bash
 cd RealEstate-DjangoProject
