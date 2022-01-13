@@ -1,5 +1,5 @@
 # RealEstate-Django Project
- Basic Django project from a course
+ 
  
 ## Tech Used
 - Django
