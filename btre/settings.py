@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-e0yh+--r3emt%w9j5^s($6y1@b)^a0-1-al)o5gg80a=33jt85
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["application-real-estate.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,16 +83,32 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':  'realestate',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nandinichhajed',
+#         'HOST': 'localhost',
+#         'PORT': "5432",
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'realestate',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'realestate',
         'USER': 'postgres',
         'PASSWORD': 'nandinichhajed',
         'HOST': 'localhost',
-        'PORT': "5432",
+        'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -155,3 +173,6 @@ EMAIL_PORT =587
 EMAIL_HOST_USER='nandiniiichhajed@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
+
+WHITENOISE_USE_FINDERS = True
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
