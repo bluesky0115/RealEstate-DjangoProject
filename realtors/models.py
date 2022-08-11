@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Realtor(models.Model):
     name = models.CharField(max_length=200)
-    photo = models.ImageField(upload_to= 'Realtor/%Y/%m/%d/')
+    photo = models.ImageField(upload_to= 'Realtor/%Y/%m/')
     description = models.TextField(blank=True)
     phone = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
