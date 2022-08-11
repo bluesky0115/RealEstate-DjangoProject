@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
+import dj_database_url
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e0yh+--r3emt%w9j5^s($6y1@b)^a0-1-al)o5gg80a=33jt85'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -94,15 +97,14 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 #     }
 # }
 
-import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'realestate',
-        'USER': 'postgres',
-        'PASSWORD': 'nandinichhajed',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3railo1iej70l',
+        'USER': 'edpaeymdzlrjou',
+        'PASSWORD': '6c1fa1c4ec523bb8307f89bb1c2bc60aa9758a7277669b4882333788d435b65c',
+        'HOST': 'ec2-34-231-221-151.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
