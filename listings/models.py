@@ -15,7 +15,7 @@ class Listing(models.Model):
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField()
     garage = models.IntegerField(default=0)
-    sqft = models.DecimalField(max_digits=2, decimal_places=1)
+    sqft = models.DecimalField(max_digits=5, decimal_places=1)
     lot_size = models.DecimalField(max_digits=5, decimal_places=1)
     photo_main = models.ImageField(upload_to= 'Home/%Y/%m/')
     photo_1 = models.ImageField(upload_to= 'Home/%Y/%m/', blank= True)
